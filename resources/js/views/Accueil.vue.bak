@@ -1,0 +1,71 @@
+<script setup>
+import { ref, computed, onMounted } from 'vue';
+import { http, unwrap, liste, erreur, lib, idDe, etiq, scalaires } from '../api';
+const niveaux = ref([]); const parcours = ref([]); const maquette = ref(null); const syllabus = ref(null);
+const niveau = ref(null); const parc = ref(null); const busy = ref(false); const err = ref('');
+const etape = computed(() => (syllabus.value ? 4 : maquette.value || (parc.value && !busy.value) ? 3 : niveau.value ? 2 : 1));
+
+async function appel(f) { busy.value = true; err.value = ''; try { await f(); } catch (e) { err.value = e.response?.status === 404 ? '' : erreur(e); } finally { busy.value = false; } }
+onMounted(() => appel(async () => { niveaux.value = liste(unwrap(await http.get('/niveaux'))); }));
+const choisirNiveau = (n) => appel(async () => { niveau.value = n; parcours.value = liste(unwrap(await http.get(`/niveaux/${idDe(n)}/parcours`))); });
+const choisirParcours = (p) => appel(async () => { parc.value = p; maquette.value = null; maquette.value = unwrap(await http.get(`/niveaux/${idDe(niveau.value)}/parcours/${idDe(p)}/maquette`)); });
+const ouvrirSyllabus = (id) => id && appel(async () => { syllabus.value = unwrap(await http.get(`/syllabus/${id}`)); });
+function retour() {
+    err.value = '';
+    if (syllabus.value) syllabus.value = null;
+    else if (parc.value) { parc.value = null; maquette.value = null; }
+    else niveau.value = null;
+}
+
+const unites = computed(() => maquette.value?.unites ?? maquette.value?.ues ?? []);
+const lignesDe = (u) => u.lignes ?? u.ecs ?? [];
+const aplat = (l) => ({ ...(l.ec && typeof l.ec === 'object' ? l.ec : {}), ...l });
+const syllabusDe = (l) => { const e = aplat(l); return idDe(e.syllabus) ?? (typeof e.syllabus === 'string' ? e.syllabus : null) ?? e.syllabus_id; };
+const cols = (u) => { const m = new Map(); lignesDe(u).forEach((l) => scalaires(aplat(l)).forEach(([k]) => m.set(k, 1))); return [...m.keys()]; };
+// Le syllabus n'affiche que trois rubriques : objectifs, contenu, bibliographie.
+const RUBRIQUES = [['objectif', 'Objectifs'], ['contenu', 'Contenu'], ['biblio', 'Bibliographie']];
+function trouver(o, re, prof = 0) {
+    if (!o || typeof o !== 'object') return null;
+    for (const [k, v] of Object.entries(o)) if (re.test(k) && v && !(Array.isArray(v) && v.some((x) => x?.titre))) return v;
+    for (const v of Object.values(o)) if (Array.isArray(v)) { const it = v.find((x) => x && re.test(x.titre ?? '')); if (it) return it.contenu ?? it.texte; }
+    if (prof < 2) for (const v of Object.values(o)) { const r = trouver(v, re, prof + 1); if (r) return r; }
+    return null;
+}
+const texte = (v) => (Array.isArray(v) ? v.map((x) => (x && typeof x === 'object' ? x.contenu ?? x.texte ?? lib(x) : x)).join('\n') : typeof v === 'object' ? Object.values(v).join('\n') : String(v));
+const rubriques = computed(() => RUBRIQUES.map(([m, t]) => [t, trouver(syllabus.value, new RegExp(m, 'i'))]).filter(([, v]) => v).map(([t, v]) => [t, texte(v)]));
+const titreSyllabus = computed(() => lib(syllabus.value) || lib(syllabus.value?.ec));
+</script>
+<template>
+  <div class="row"><button v-if="etape > 1" @click="retour">← Retour</button>
+    <h1 class="grow">{{ ['', 'Choisissez un niveau d’études', 'Choisissez un parcours', 'Maquette pédagogique', 'Syllabus'][etape] }}</h1></div>
+  <p v-if="niveau" class="mut">{{ lib(niveau) }}<span v-if="parc"> › {{ lib(parc) }}</span></p>
+  <p v-if="err" class="err" role="alert">{{ err }}</p><p v-if="busy" class="mut">Chargement…</p>
+
+  <div v-if="etape === 1 && !busy" class="grid">
+    <button v-for="n in niveaux" :key="idDe(n)" class="card glass" @click="choisirNiveau(n)"><h3>{{ lib(n) }}</h3><span class="mut">{{ n.code }}</span></button>
+    <p v-if="!niveaux.length && !err" class="mut">Aucun niveau d’études n’est disponible pour le moment.</p>
+  </div>
+  <div v-else-if="etape === 2 && !busy" class="grid">
+    <button v-for="p in parcours" :key="idDe(p)" class="card glass" @click="choisirParcours(p)"><h3>{{ lib(p) }}</h3><span class="mut">{{ p.code }}</span></button>
+    <p v-if="!parcours.length" class="mut">Aucun parcours n’est disponible pour ce niveau.</p>
+  </div>
+  <div v-else-if="etape === 3 && !busy">
+    <p v-if="!maquette" class="mut">Aucune maquette publiée n’est disponible pour ce parcours.</p>
+    <template v-else>
+      <p class="mut"><template v-for="[k, v] in scalaires(maquette)" :key="k"><span v-if="/annee|version|statut/.test(k)">{{ etiq(k) }} : {{ v }} &nbsp;</span></template></p>
+      <p v-if="!unites.length" class="mut">Cette maquette ne contient pas encore d’unités d’enseignement.</p>
+      <section v-for="u in unites" :key="idDe(u) ?? u.code" class="glass" style="padding:14px;margin:12px 0">
+        <h3>{{ u.code }} {{ lib({ intitule: u.intitule, nom: u.nom }) }} <span v-if="u.credits != null" class="badge">{{ u.credits }} crédits</span>
+          <span v-if="u.semestre" class="badge">{{ lib(u.semestre) || u.semestre }}</span></h3>
+        <div class="tw"><table><thead><tr><th v-for="c in cols(u)" :key="c">{{ etiq(c) }}</th><th></th></tr></thead>
+          <tbody><tr v-for="l in lignesDe(u)" :key="idDe(l) ?? idDe(aplat(l))" :class="{ click: syllabusDe(l) }" @click="ouvrirSyllabus(syllabusDe(l))">
+            <td v-for="c in cols(u)" :key="c">{{ aplat(l)[c] }}</td><td class="mut">{{ syllabusDe(l) ? 'Syllabus ›' : 'Pas de syllabus' }}</td></tr></tbody></table></div>
+      </section>
+    </template>
+  </div>
+  <div v-else-if="etape === 4">
+    <h2>{{ titreSyllabus }}</h2>
+    <article v-for="[t, v] in rubriques" :key="t" class="glass" style="padding:16px;margin:12px 0"><h3>{{ t }}</h3><p style="white-space:pre-line;max-width:75ch">{{ v }}</p></article>
+    <p v-if="!rubriques.length" class="mut">Le contenu de ce syllabus n’est pas encore renseigné.</p>
+  </div>
+</template>

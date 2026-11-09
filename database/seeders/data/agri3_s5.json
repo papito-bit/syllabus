@@ -1,0 +1,302 @@
+{
+  "niveau": {
+    "code": "L3",
+    "libelle": "Licence 3",
+    "ordre": 3
+  },
+  "parcours": {
+    "code": "AGRI3",
+    "nom": "AGRI3"
+  },
+  "annee": "2026-2027",
+  "semestre": {
+    "code": "S5",
+    "libelle": "Semestre 5",
+    "ordre": 5
+  },
+  "colonnes": [
+    {
+      "cle": "autres",
+      "libelle": "Autres"
+    },
+    {
+      "cle": "travail_personnel",
+      "libelle": "Travail personnel"
+    }
+  ],
+  "unites": [
+    {
+      "code": "UE20",
+      "intitule": "PRODUCTION VÉGÉTALE AVANCÉE",
+      "credits": 8,
+      "lignes": [
+        {
+          "code": "EC20-1",
+          "intitule": "Amélioration des plantes",
+          "cm": 10,
+          "td": 12,
+          "tp": 8,
+          "travail_personnel": 60,
+          "syllabus": {
+            "objectifs": "À l’issue de cette unité d’enseignement, l’étudiant sera capable de :\n- Comprendre les bases génétiques et agronomiques de l’amélioration des plantes.\n- Identifier les différentes méthodes d’amélioration (classiques et biotechnologiques).\n- Élaborer un schéma de sélection adapté à un objectif de production.\n- Appliquer les principes de sélection pour obtenir des cultivars améliorés.\n- Apprécier les enjeux socio-économiques, éthiques et environnementaux liés à l’amélioration des plantes.",
+            "prerequis": "- Bases de biologie végétale\n- Génétique générale\n- Agronomie générale\n- Statistique appliquée",
+            "programme": "Introduction à l’amélioration des plantes\n- Définition et importance\n- Objectifs de l’amélioration\n- Historique et évolutions\nBases génétiques de l’amélioration\n- Hérédité qualitative et quantitative\n- Variabilité génétique : mutation, recombinaison, hybridation\n- Ségrégation et héritabilité\nMéthodes classiques de sélection\n- Sélection massale, lignée pure, récurrente\n- Croisement et hybridation contrôlée\n- Sélection assistée par marqueurs\nAmélioration des plantes autogames, allogames et clonales\n- Stratégies de sélection spécifiques\n- Gestion de la consanguinité et de la vigueur hybride (hétérosis)\nBiotechnologies végétales\n- Culture in vitro et embryogenèse somatique\n- Transgénèse et CRISPR-Cas9\n- Avantages, risques et réglementations\nÉtudes de cas et applications pratiques\n- Amélioration du riz, du maïs, du manioc, des légumineuses tropicales\n- Travaux pratiques de sélection et d’analyse variétale\nEnjeux socio-économiques et éthiques (2h)\n- Propriété intellectuelle (brevets, obtentions végétales)\n- Impact sur la biodiversité et les systèmes agricoles locaux",
+            "bibliographie": "- Allard, R.W. (1999). Principles of Plant Breeding. Wiley.\n- Acquaah, G. (2012). Principles of Plant Genetics and Breeding. Wiley-Blackwell.\n- Sleper, D.A. & Poehlman, J.M. (2006). Breeding Field Crops. Blackwell Publishing.\n- Charcosset, A. (2017). Génétique et amélioration des plantes. Lavoisier TEC & DOC.\n- FAO (2001). Plant Genetic Resources and Food Security. Rome.\n- Documents techniques du FOFIFA et CIRAD Madagascar"
+          }
+        },
+        {
+          "code": "EC20-2",
+          "intitule": "Cultures industrielles et stratégiques",
+          "cm": 10,
+          "td": 12,
+          "tp": 8,
+          "travail_personnel": 60,
+          "syllabus": {
+            "objectifs": "À l’issue de cet enseignement, l’étudiant sera capable de :\n- Connaître les principales cultures industrielles et stratégiques dans le contexte national et international.\n- Diagnostiquer les contraintes de production et proposer des solutions techniques et agronomiques.\n- Contribuer à la valorisation durable des ressources agricoles à usage industriel ou stratégique.",
+            "prerequis": "- Notions d’agronomie générale\n- Physiologie végétale\n- Connaissance de base en économie rurale\n- Sols et fertilité",
+            "programme": "Introduction générale\n- Définition des cultures industrielles et stratégiques\n- Importance socio-économique et géopolitique\n- Situation à Madagascar et perspectives\nCultures à vocation agro-industrielle\n- Canne à sucre : itinéraire technique, transformation, valorisation\n- Coton : exigences agronomiques, récolte, transformation textile\n- Arachide, soja, tournesol : production d’huile, sous-produits\n- Manioc industriel : amidon et bioéthanol\n- Études de cas locaux et régionaux\nCultures à haute valeur stratégique\n- Café, cacao, vanille, girofle, poivre : spécificités techniques, transformation, marchés d’exportation\n- Contraintes phytosanitaires et exigences de qualité\n- Traçabilité et certification (commerce équitable, bio, etc.)\nCultures énergétiques et médicinales\n- Jatropha, ricin : production de biocarburants\n- Plantes médicinales à usage industriel : ravintsara, niaouli, artemisia\n- Transformation et réglementation\nModule 5 : Gestion durable et valorisation des filières (8h)\n- Approche filière : production → transformation → commercialisation\n- Problématiques foncières, climatiques et économiques\n- Organisation des producteurs et partenariat public-privé\n- Éthique et durabilité dans les filières industrielles",
+            "bibliographie": "- FAO (2018). Cultures industrielles et développement rural. Rome.\n- Memento de l’agronome – CIRAD, 2012.\n- Delpeuch F. (2009). Économie des filières agro-industrielles. Karthala.\n- Rasoloarisoa J. (2015). Les cultures de rente à Madagascar : état des lieux et défis. Université d’Antananarivo.\n- CIRAD (2014). Cultures tropicales industrielles : techniques et filières.\n- Documents techniques du Ministère de l’Agriculture et de l’Élevage de Madagascar, FOFIFA."
+          }
+        },
+        {
+          "code": "EC20-3",
+          "intitule": "Certification et traçabilité des productions",
+          "cm": 10,
+          "td": 12,
+          "tp": 8,
+          "travail_personnel": 60,
+          "syllabus": {
+            "objectifs": "L’objectif principal de cet enseignement est de fournir aux étudiants les compétences fondamentales nécessaires pour comprendre, appliquer et évaluer les systèmes de certification et de traçabilité dans les filières agricoles. À l’issue de ce cours, les étudiants seront capables de :\n- Maîtriser les concepts clés de la certification (qualité, environnement, bio, commerce équitable, etc.)\n- Comprendre les enjeux économiques, réglementaires et environnementaux liés à la certification et à la traçabilité\n- Mettre en œuvre un système de traçabilité adapté à une production agricole\n- Identifier les organismes certificateurs et les normes en vigueur\n- Rédiger des documents techniques et administratifs liés à la certification\n- Participer activement à une démarche qualité au sein d'une exploitation ou d'une entreprise agroalimentaire",
+            "prerequis": "- Notions de base en gestion de la qualité\n- Connaissances en productions végétales et animales\n- Bases en réglementation agricole et agroalimentaire",
+            "programme": "Introduction à la certification\n- Définitions et objectifs de la certification\n- Typologies de certification (produit, système, process)\n- Acteurs et organismes certificateurs\nNormes et référentiels\n- ISO 9001, ISO 22000, GLOBALG.A.P., Label Rouge, Agriculture Biologique, Fairtrade\n- Études de cas : certification en filières café, vanille, riz\nTraçabilité des productions agricoles\n- Définition et niveaux de traçabilité (interne, externe)\n- Moyens techniques (codes-barres, RFID, blockchain)\n- Mise en place d’un système de traçabilité dans une exploitation\nProcessus de certification\n- Étapes : audit, évaluation, non-conformités, délivrance du certificat\n- Coût, durée, renouvellement\nEnjeux et impacts\n- Confiance du consommateur\n- Accès au marché international\n- Développement durable et certifications environnementales",
+            "bibliographie": "Ouvrages principaux :\n- FAO. (2010). Traçabilité et certification dans les chaînes de valeur agroalimentaires.\n- AFNOR. (2018). La certification en agriculture : comprendre les normes et les labels.\n- Lamine, C. (2008). La certification biologique : enjeux et perspectives. Editions Quae.\nArticles et ressources en ligne :\n- GLOBALG.A.P. www.globalgap.org\n- Ecocert Madagascar. www.ecocert.com/fr-MG\n- ISO (2020). Understanding ISO 22000 – Food safety management systems\nTextes réglementaires :\n- Code rural de Madagascar\n- Règlement CE n°834/2007 relatif à la production biologique\n- Normes Codex Alimentarius sur la traçabilité"
+          }
+        },
+        {
+          "code": "EC20-4",
+          "intitule": "Systèmes de production horticole",
+          "cm": 10,
+          "td": 12,
+          "tp": 8,
+          "travail_personnel": 60,
+          "syllabus": {
+            "objectifs": "Cet enseignement a pour objectif de doter les étudiants des compétences techniques et agronomiques nécessaires à la compréhension, la conception, la gestion et l’optimisation des systèmes de production horticole dans un contexte agroécologique et socioéconomique donné.\nÀ l’issue de ce cours, les étudiants seront capables de :\n- Identifier les principales filières horticoles (maraîchage, arboriculture fruitière, plantes ornementales, etc.) adaptées aux conditions locales.\n- Comprendre les spécificités biologiques, écologiques et techniques des cultures horticoles.\n- Concevoir un itinéraire technique adapté à une culture horticole donnée.\n- Mettre en œuvre des techniques culturales intégrées (fertilisation, irrigation, protection des cultures).\n- Analyser la durabilité et la rentabilité d’un système horticole.",
+            "prerequis": "- Bases de botanique et physiologie végétale\n- Notions de pédologie et agro-climatologie\n- Introduction à la production végétale\n- Initiation à l’agroéconomie",
+            "programme": "Introduction aux systèmes horticoles\n- Définition et importance de l’horticulture\n- Typologie des systèmes horticoles (intensif, extensif, biologique, hydroponique, etc.)\n- Rôle socio-économique de l’horticulture à Madagascar\nChoix des cultures et planification\n- Critères de choix : climatiques, édaphiques, économiques\n- Calendrier cultural et rotations\n- Associations et successions culturales\nTechniques de production horticole\n- Semis, plantation, pépinières, bouturage\n- Fertilisation organique et minérale\n- Gestion de l’irrigation : gravitaire, goutte-à-goutte, aspersion\n- Méthodes de lutte phytosanitaire intégrée (IPM)\nCultures horticoles spécifiques\n- Maraîchage : tomate, oignon, laitue, chou, carotte\n- Arboriculture fruitière : mangue, papaye, agrumes, banane\n- Plantes ornementales : fleurs, haies, gazons\n- Étude de cas : systèmes de production en zone côtière du Nord de Madagascar\nDurabilité et gestion agroécologique\n- Diagnostic agroécologique d’une parcelle\n- Gestion intégrée de la fertilité des sols et de la biodiversité\n- Pratiques agroécologiques en horticulture (paillage, compostage, rotations)",
+            "bibliographie": "Ouvrages de référence :\n- Dubois, C. & al. (2017). Techniques maraîchères en milieu tropical. Presses agronomiques de Gembloux.\n- FAO. (2003). Production horticole en milieu tropical. FAO Document Technique.\n- Aubert, C. (2001). L’horticulture durable : principes et pratiques. Éditions Quae.\nRessources complémentaires :\n- CIRAD, Fiches techniques horticoles www.cirad.fr\n- CTA (2010). Manuel du maraîcher africain. Editions CTA.\n- INRAE. Dossiers sur l’agroécologie appliquée à l’horticulture.\n- Normes phytosanitaires nationales et réglementations semencières à Madagascar"
+          }
+        }
+      ]
+    },
+    {
+      "code": "UE21",
+      "intitule": "GESTION DES EXPLOITATIONS AGRICOLES",
+      "credits": 4.5,
+      "lignes": [
+        {
+          "code": "EC21-1",
+          "intitule": "Gestion économique des exploitations",
+          "cm": 10,
+          "td": 12.5,
+          "tp": 0,
+          "travail_personnel": 60,
+          "syllabus": {
+            "objectifs": "Cet enseignement a pour objectif de former les étudiants à la compréhension et à l’analyse économique des exploitations agricoles afin de leur permettre de participer à leur gestion, de prendre des décisions rationnelles et d’optimiser les résultats économiques.\nÀ la fin du cours, l’étudiant sera capable de :\n- Comprendre les principes de base de la gestion économique appliquée à l’exploitation agricole ;\n- Élaborer un diagnostic technico-économique d’une exploitation ;\n- Analyser les résultats économiques (marges, seuils de rentabilité, productivité) ;\n- Construire un plan d’investissement, un budget prévisionnel et un plan de trésorerie ;\n- Proposer des stratégies d’optimisation et d’adaptation des exploitations agricoles.",
+            "prerequis": "- Introduction à l’économie générale et rurale\n- Connaissances en agronomie et techniques de production\n- Initiation à la comptabilité agricole",
+            "programme": "Introduction à la gestion d’exploitation agricole\n- Définition et spécificités de l’entreprise agricole\n- Facteurs de production et contraintes des exploitations rurales\nAnalyse technico-économique\n- Calcul des marges brutes, nettes, et de la valeur ajoutée\n- Seuil de rentabilité, productivité, ratios de gestion\n- Étude de cas d’exploitation (maraîchère, rizicole, laitière)\nBudgets de gestion agricole\n- Budget de production, budget de trésorerie, budget d’investissement\n- Simulation de scénarios économiques à court et moyen terme\nComptabilité agricole de base\n- Tenue de documents comptables simplifiés\n- Plan comptable agricole\n- Compte de résultat et bilan d’exploitation\nPrise de décision et choix stratégiques\n- Analyse SWOT appliquée à l’agriculture\n- Choix des cultures ou systèmes d’élevage en fonction des prix, coûts et opportunités\n- Introduction à la gestion des risques et à l’assurance agricole",
+            "bibliographie": "Ouvrages :\n- Bousquet, J. (2015). Économie et gestion de l’exploitation agricole. Éditions France Agricole.\n- Dufumier, M. (2010). Gestion des exploitations agricoles en milieu tropical. Karthala.\n- Gafsi, M., et al. (2006). Méthodes de diagnostic et d’analyse des systèmes de production agricole. Éditions Quae.\n- INRAE (2020). Comptabilité et gestion à la ferme. Collection Agro-Management.\nRessources complémentaires :\n- FAO. (2005). Guide pratique de la gestion de l’exploitation familiale\n- CIRAD, Fiches économiques agricoles www.cirad.fr\n- Plateformes en ligne de gestion simplifiée pour petites exploitations (Agroptima, FarmWizard)"
+          }
+        },
+        {
+          "code": "EC21-2",
+          "intitule": "Comptabilité et analytique d'exploitation",
+          "cm": 7,
+          "td": 7.5,
+          "tp": 8,
+          "travail_personnel": 60,
+          "syllabus": {
+            "objectifs": "Cet enseignement vise à doter les étudiants des bases théoriques et pratiques en comptabilité générale et en comptabilité analytique appliquées aux exploitations agricoles. À l’issue de la formation, l’étudiant sera capable de :\n- Maîtriser les principes fondamentaux de la comptabilité d’une exploitation agricole ;\n- Enregistrer les opérations courantes selon le plan comptable agricole ;\n- Établir les documents comptables de base (journal, grand livre, bilan, compte de résultat) ;\n- Analyser les coûts de production et les marges à partir de la comptabilité analytique ;\n- Utiliser les données comptables pour évaluer la rentabilité et orienter la gestion technique.",
+            "prerequis": "- Notions d’économie rurale\n- Bases en gestion agricole\n- Mathématiques financières de base",
+            "programme": "Principes de la comptabilité générale\n- Définition, objectifs et importance de la comptabilité\n- Notions de patrimoine, bilan et compte de résultat\n- Le principe de la partie double et les documents comptables\nPlan comptable agricole\n- Structure et spécificités du Plan Comptable Agricole (PCA)\n- Comptabilisation des opérations courantes : achats, ventes, charges, immobilisations\n- Exercices d’enregistrement comptable\nDocuments de synthèse\n- Élaboration du bilan et du compte de résultat simplifié\n- Lecture et interprétation des soldes comptables\n- Cas pratiques appliqués à des micro-exploitations agricoles\nComptabilité analytique agricole\n- Introduction à la comptabilité de gestion\n- Coûts directs et indirects, coûts complets, coûts marginaux\n- Calcul des marges brutes, nettes, seuils de rentabilité\nUtilisation des données comptables pour la gestion\n- Analyse de rentabilité, de solvabilité et de liquidité\n- Tableaux de bord et indicateurs économiques\n- Études de cas réels d’exploitations locales",
+            "bibliographie": "Ouvrages de base :\n- Bousquet, J. (2018). Comptabilité et analyse financière des exploitations agricoles. Éditions France Agricole.\n- Giraud, P. (2010). Comptabilité générale et analytique appliquée à l’agriculture. Éditions Educagri.\n- FAO. (2005). Guide pratique de comptabilité pour les exploitations agricoles familiales.\nAutres sources utiles :\n- Ministère de l’Agriculture de Madagascar – Manuel simplifié de comptabilité rurale\n- CIRAD : Fiches pédagogiques en gestion comptable pour exploitants agricoles\n- OADA : Normes comptables OHADA appliquées à l’agriculture (documents disponibles en ligne)"
+          }
+        },
+        {
+          "code": "EC21-3",
+          "intitule": "Politiques agricoles et développement rural",
+          "cm": 10,
+          "td": 12.5,
+          "tp": 0,
+          "travail_personnel": 45,
+          "syllabus": {
+            "objectifs": "À l’issue de ce cours, l’étudiant sera capable de :\n- Comprendre les concepts clés des politiques agricoles et du développement rural.\n- Analyser les enjeux et défis du secteur agricole dans le contexte national et international.\n- Identifier les acteurs, institutions et instruments des politiques agricoles.\n- Étudier les stratégies de développement rural intégrant aspects économiques, sociaux et environnementaux.\n- Apprécier les liens entre politiques agricoles, sécurité alimentaire et développement durable.\n- Formuler des recommandations adaptées aux réalités locales pour la promotion du développement rural.",
+            "prerequis": "- Connaissances de base en économie agricole et sociologie rurale.\n- Notions élémentaires de gestion des ressources naturelles et développement durable.\n- Compréhension des systèmes agricoles et contextes socio-économiques ruraux.",
+            "programme": "Introduction aux politiques agricoles\n- Définition et objectifs des politiques agricoles\n- Historique et évolution des politiques agricoles à Madagascar et dans le monde\n- Enjeux majeurs : sécurité alimentaire, souveraineté alimentaire, compétitivité\nActeurs et institutions des politiques agricoles\n- Rôle de l’État, collectivités locales, organisations paysannes\n- Partenaires techniques et financiers, ONG et secteur privé\n- Cadres législatifs et réglementaires\nInstruments et outils des politiques agricoles\n- Subventions, crédits agricoles, systèmes d’assurance\n- Fiscalité, régulation des marchés, protection douanière\n- Programmes de soutien et projets de développement rural\nDéveloppement rural intégré\n- Concepts et approches du développement rural\n- Dynamique territoriale et gestion participative\n- Intégration des dimensions sociales, économiques et environnementales\nEnjeux contemporains et perspectives\n- Politiques face aux changements climatiques et à la durabilité\n- Innovations technologiques et transformation agricole\n- Politiques agricoles inclusives et lutte contre la pauvreté rurale",
+            "bibliographie": "Ouvrages de référence :\n- FAO (2017). Politiques agricoles et développement rural : concepts et enjeux. FAO Publications.\n- Tchamyou, V. S., & Asongu, S. A. (2019). Agricultural Policies and Rural Development. Springer.\n- World Bank (2018). Rural Development and Agriculture. World Bank Reports.\n- Rakotondramanana, J. (2015). Agriculture et développement rural à Madagascar. Editions Universitaires.\nRessources complémentaires :\n- Documents politiques nationaux et plans stratégiques agricoles malgaches.\n- Articles et études de cas sur le développement rural en Afrique et à Madagascar.\n- Rapports des ONG et institutions internationales sur la sécurité alimentaire et l’agriculture durable."
+          }
+        }
+      ]
+    },
+    {
+      "code": "UE22",
+      "intitule": "AGRICULTURE DE PRÉCISION ET NUMÉRIQUE",
+      "credits": 7.5,
+      "lignes": [
+        {
+          "code": "EC22-1",
+          "intitule": "Systèmes d’information géographique (SIG) appliqués à l’agriculture",
+          "cm": 10,
+          "td": 12,
+          "tp": 8,
+          "travail_personnel": 60,
+          "syllabus": {
+            "objectifs": "À la fin de ce cours, l’étudiant(e) sera capable de :\n- Comprendre les fondements des SIG et leurs enjeux en agriculture.\n- Acquérir des compétences pratiques en collecte, traitement et analyse de données géospatiales.\n- Utiliser des outils SIG (comme QGIS) pour la cartographie et la gestion des données agricoles.\n- Intégrer les SIG dans la planification et la prise de décision agricole (gestion des cultures, irrigation, fertilisation, etc.).\n- Contribuer à la mise en place d’une agriculture de précision durable à Madagascar.",
+            "prerequis": "- Notions de base en informatique et bureautique.\n- Connaissances élémentaires en agronomie et en analyse de données.\n- Mathématiques appliquées (géométrie, statistiques de base).",
+            "programme": "Introduction aux SIG\n- Définition et composantes des SIG\n- Historique et domaines d’application\n- Structure des données spatiales : raster vs vecteur\nDonnées géospatiales agricoles\n- Sources de données agricoles (satellites, GPS, drones, relevés terrain)\n- Données climatiques, pédologiques et topographiques\n- Métadonnées et qualité des données\nLogiciels SIG et environnement QGIS\n- Interface de QGIS\n- Manipulation de couches, projections et géoréférencement\n- Visualisation et gestion de bases de données spatiales\nAnalyse spatiale appliquée à l’agriculture\n- Cartographie de l’occupation des sols\n- Évaluation de la fertilité des sols\n- Zonage agro-écologique et potentiel de production\n- Suivi des cultures et gestion de l’irrigation\nÉtudes de cas pratiques\n- SIG pour la planification agricole à Madagascar\n- SIG pour la gestion durable des terres cultivées\n- Initiation à l’agriculture de précision",
+            "bibliographie": "Ouvrages principaux :\n- Burrough, P. A., & McDonnell, R. A. (1998). Principles of Geographical Information Systems. Oxford University Press.\n- Longley, P., Goodchild, M. F., Maguire, D. J., & Rhind, D. W. (2015). Geographic Information Systems and Science. Wiley.\n- FAO (2013). Good practices for the use of geographic information systems (GIS) in agriculture. Rome.\n- QGIS Documentation Project. (Dernière version). QGIS User Guide. https://docs.qgis.org\nArticles & Ressources locales :\n- MINAE Madagascar. Rapports sur la cartographie agricole.\n- CIRAD – SIG et agriculture tropicale.\n- CNRE Madagascar – Données environnementales et cartographie."
+          }
+        },
+        {
+          "code": "EC22-2",
+          "intitule": "Automatisation et robotique agricole",
+          "cm": 7,
+          "td": 7.5,
+          "tp": 8,
+          "travail_personnel": 60,
+          "syllabus": {
+            "objectifs": "- Comprendre les principes fondamentaux de l’automatisation et de la robotique appliquées au secteur agricole.\n- Identifier les composants et systèmes utilisés dans les équipements automatisés et robots agricoles.\n- Concevoir ou adapter des solutions automatisées pour les tâches agricoles (irrigation, récolte, semis, etc.).\n- Acquérir des compétences de base en programmation de microcontrôleurs, capteurs et actionneurs.\n- Évaluer les apports technologiques dans l’amélioration de la productivité et de la durabilité agricoles.",
+            "prerequis": "- Connaissances de base en électricité et électronique.\n- Notions élémentaires en mécanique agricole.\n- Initiation en informatique et algorithmique (recommandée).\n- Esprit d’analyse et sens pratique pour les applications techniques.",
+            "programme": "Introduction à l’automatisation agricole\n- Historique et évolution de l’automatisation en agriculture\n- Concepts d’automate, capteurs, actionneurs, systèmes embarqués\n- Bénéfices, limites et enjeux socio-économiques\nComposants des systèmes automatisés agricoles\n- Capteurs (humidité, température, position, vision, etc.)\n- Actionneurs (moteurs, vérins, pompes)\n- Interfaces homme-machine (IHM), microcontrôleurs (type Arduino, Raspberry Pi)\n- Alimentation et communication (filaire, sans fil, IoT)\nRobotique mobile et systèmes intelligents en agriculture\n- Robots de désherbage, semis, récolte\n- Systèmes de guidage GPS/RTK, drones agricoles\n- Intelligence artificielle appliquée à l’agriculture de précision\n- Études de cas de robots agricoles utilisés dans différents contextes (Afrique et monde)\nProgrammation et automatisation appliquées\n- Logique combinatoire et séquentielle\n- Introduction aux langages de programmation (Arduino/C++)\n- Réalisation de mini-projets : système d’irrigation automatisé, robot suiveur de ligne\n- Tests sur simulateurs et maquettes\nIntégration et perspectives d’innovation\n- Maintenance et sécurité des systèmes automatisés\n- Intégration dans les exploitations agricoles malgaches\n- Adaptation aux conditions locales (coût, énergie, terrain)\n- Discussion sur l’agriculture 4.0 et les smart farms",
+            "bibliographie": "- Shamshiri, R. R., et al. (2018). Research and development in agricultural robotics: A perspective of digital farming. International Journal of Agricultural and Biological Engineering.\n- Pedersen, S. M., & Fountas, S. (2017). Precision Agriculture: Technology and Economic Perspectives. Springer.\n- Zhang, Q. (2016). Automation in Agriculture: Securing Food Supplies for Future Generations. InTechOpen.\n- Gonzalez-de-Santos, P. et al. (2017). Field Robots for Intelligent Farms—Inherently Safe Design, Perception and Navigation. Biosystems Engineering.\n- Fiches techniques FAO, IRD, CIRAD sur la mécanisation agricole intelligente et adaptée.\n- Tutoriels open source (Arduino, Raspberry Pi, etc.)."
+          }
+        },
+        {
+          "code": "EC22-3",
+          "intitule": "Analyse et traitement des données agronomiques",
+          "cm": 10,
+          "td": 12,
+          "tp": 8,
+          "travail_personnel": 60,
+          "syllabus": {
+            "objectifs": "À l’issue de ce cours, l’étudiant sera capable de :\n- Comprendre les méthodes fondamentales d’analyse statistique appliquées aux données agronomiques.\n- Collecter, organiser et valider des données issues d’expériences agricoles.\n- Appliquer des techniques statistiques classiques (analyse descriptive, tests d’hypothèses, analyses multivariées) pour interpréter les résultats agronomiques.\n- Utiliser des logiciels statistiques (ex : R, Excel, SPSS) pour le traitement des données.\n- Formuler des conclusions agronomiques fiables à partir des analyses réalisées.\n- Présenter et communiquer les résultats de manière claire et professionnelle.",
+            "prerequis": "- Notions de base en agronomie (biologie végétale, sols, climat).\n- Connaissances élémentaires en mathématiques (statistiques descriptives, probabilités).\n- Informatique de base (utilisation d’un ordinateur, tableurs).",
+            "programme": "Introduction et principes de base\n- Nature des données agronomiques : variables quantitatives et qualitatives\n- Organisation et codage des données\n- Principes de la statistique descriptive : moyenne, médiane, variance, écart-type\nAnalyse descriptive et visualisation\n- Tableaux de fréquences et graphiques (histogrammes, boîtes à moustaches)\n- Corrélations simples et matrices de corrélation\n- Introduction aux logiciels : Excel et R pour l’analyse descriptive\nTests statistiques et inférence\n- Tests paramétriques : test t de Student, ANOVA\n- Tests non paramétriques : test de Wilcoxon, test de Kruskal-Wallis\n- Tests d’homogénéité et de normalité (Shapiro-Wilk)\n- Interprétation des résultats et prise de décision\nAnalyses multivariées appliquées à l’agronomie\n- Analyse en composantes principales (ACP)\n- Analyse de classification (classification hiérarchique)\n- Applications dans la caractérisation des sols, des cultures et des variétés\nÉtudes de cas et communication scientifique\n- Traitement complet d’un jeu de données agronomiques réel\n- Rédaction et présentation des résultats\n- Introduction à la publication scientifique : rédaction d’un rapport et résumé",
+            "bibliographie": "Ouvrages fondamentaux :\n- Gomez, K. A., & Gomez, A. A. (1984). Statistical Procedures for Agricultural Research. Wiley.\n- Zar, J. H. (2010). Biostatistical Analysis. Pearson.\n- Field, A. (2013). Discovering Statistics Using IBM SPSS Statistics. Sage.\n- Crawley, M. J. (2012). The R Book. Wiley.\nRessources complémentaires :\n- FAO (2012). Statistical Methods for Agriculture. FAO Publications.\n- Documentation R Project : https://cran.r-project.org/manuals.html\n- Tutorials Excel pour analyses statistiques (divers sites en ligne)."
+          }
+        },
+        {
+          "code": "EC22-4",
+          "intitule": "Techniques expérimentales en agronomie",
+          "cm": 10,
+          "td": 12,
+          "tp": 8,
+          "travail_personnel": 60,
+          "syllabus": {
+            "objectifs": "À l’issue de cette unité, l’étudiant sera capable de :\n- Comprendre les principes et démarches de la recherche expérimentale en agronomie.\n- Concevoir, planifier et réaliser des expériences agronomiques en conditions contrôlées et sur le terrain.\n- Maîtriser les techniques d’échantillonnage et de collecte de données agronomiques fiables.\n- Appliquer les méthodes de contrôle des variables et d’organisation expérimentale (plans expérimentaux).\n- Rédiger un rapport scientifique d’expérience conforme aux standards académiques.",
+            "prerequis": "- Connaissances de base en agronomie et biologie végétale.\n- Notions élémentaires de statistiques descriptives.\n- Capacités d’utilisation d’outils bureautiques.",
+            "programme": "Introduction aux techniques expérimentales\n- Définition, objectifs et importance de l’expérimentation en agronomie\n- Les étapes de la démarche expérimentale\n- Variables indépendantes, dépendantes, facteurs et nuisances\nPlans expérimentaux\n- Types de plans expérimentaux : plan complètement randomisé, plan en blocs randomisés, plans factoriels\n- Choix du plan selon les objectifs et contraintes\n- Réplications et aléas expérimentaux\n- Organisation pratique et mise en place des parcelles expérimentales\nTechniques d’échantillonnage et collecte des données\n- Méthodes d’échantillonnage (aléatoire, systématique, stratifié)\n- Prélèvement d’échantillons végétaux, sols, et autres matériaux\n- Mesures agronomiques courantes : biomasse, rendement, caractéristiques physiologiques\nContrôle qualité et gestion des données expérimentales\n- Contrôle de la validité et fiabilité des données\n- Prévention des biais et erreurs expérimentales\n- Enregistrement, gestion et traitement initial des données\nAnalyse et présentation des résultats expérimentaux\n- Méthodes simples d’analyse statistique appliquées aux résultats expérimentaux\n- Représentation graphique des données (histogrammes, courbes, diagrammes)\n- Rédaction d’un rapport d’expérience : structure, contenu, communication scientifique",
+            "bibliographie": "Ouvrages de référence :\n- Gomez, K. A., & Gomez, A. A. (1984). Statistical Procedures for Agricultural Research. Wiley.\n- Cochran, W. G., & Cox, G. M. (1992). Experimental Designs. Wiley.\n- Steel, R. G. D., Torrie, J. H., & Dickey, D. A. (1997). Principles and Procedures of Statistics: A Biometrical Approach. McGraw-Hill.\n- Lepage, L., & Boivin, J. (2001). Méthodes expérimentales en sciences agronomiques. Presses de l’Université Laval.\nRessources complémentaires :\n- FAO (2013). Guidelines for Designing Experiments in Agriculture. FAO Publications.\n- Documentation en ligne sur l’échantillonnage et la gestion des données expérimentales."
+          }
+        }
+      ]
+    },
+    {
+      "code": "UE23",
+      "intitule": "ÉCOLOGIE ET GESTION DURABLE DES RESSOURCES",
+      "credits": 6,
+      "lignes": [
+        {
+          "code": "EC23-1",
+          "intitule": "Agroforesterie et sylviculture",
+          "cm": 10,
+          "td": 12,
+          "tp": 8,
+          "travail_personnel": 60,
+          "syllabus": {
+            "objectifs": "À l’issue de ce cours, l’étudiant sera capable de :\n- Comprendre les principes fondamentaux de l’agroforesterie et de la sylviculture dans le contexte agricole.\n- Identifier les différentes pratiques agroforestières adaptées aux zones tropicales et à Madagascar.\n- Connaître les techniques sylvicoles pour la gestion durable des forêts et des plantations.\n- Concevoir et planifier des systèmes agroforestiers adaptés à différents types de production agricole et sylvicole.\n- Maîtriser les techniques de plantation, d’entretien et de régénération des arbres dans les systèmes agricoles.",
+            "prerequis": "- Bases en écologie, agronomie et gestion des ressources naturelles.\n- Notions de biologie végétale et d’écosystèmes forestiers.\n- Connaissances élémentaires en gestion environnementale.",
+            "programme": "Introduction à l’agroforesterie\n- Définition, historique et concepts clés\n- Typologies des systèmes agroforestiers\n- Rôles écologiques, économiques et sociaux de l’agroforesterie\nPrincipes et pratiques de la sylviculture\n- Biologie et écologie des espèces ligneuses\n- Techniques de régénération naturelle et artificielle\n- Méthodes de plantation, éclaircie et entretien sylvicole\n- Protection des peuplements forestiers et lutte contre les ennemis des arbres\nSystèmes agroforestiers courants à Madagascar\n- Parc agroforestier, taungya, agro-sylvo-pastoral\n- Cultures associées et gestion des interactions plante-arbre\n- Cas d’études locaux et adaptation aux conditions climatiques et pédologiques\nGestion durable et conservation\n- Concepts de gestion durable des forêts et ressources agroforestières\n- Rôle de l’agroforesterie dans la conservation de la biodiversité et des sols\n- Politiques et cadres légaux liés à la sylviculture et agroforesterie\nConception et planification de projets agroforestiers\n- Diagnostic territorial et choix des espèces\n- Élaboration de plans de gestion agroforestière\n- Suivi, évaluation et communication des résultats",
+            "bibliographie": "Ouvrages de référence :\n- Nair, P. K. R. (1993). An Introduction to Agroforestry. Kluwer Academic Publishers.\n- Leakey, R. R. B. (1996). Definition of Agroforestry Revisited. Agroforestry Today.\n- Mbow, C., et al. (2014). Agroforestry Practices and Management. FAO Publications.\n- Karsenty, A. (2015). Sylviculture et gestion forestière. Editions Quae.\nRessources complémentaires :\n- FAO (2010). Guidelines for Agroforestry Planning and Management.\n- Documentation locale sur les systèmes agroforestiers malgaches.\n- Articles scientifiques sur l’agroforesterie tropicale et la sylviculture."
+          }
+        },
+        {
+          "code": "EC23-2",
+          "intitule": "Conservation des sols et lutte contre l’érosion",
+          "cm": 10,
+          "td": 12,
+          "tp": 8,
+          "travail_personnel": 60,
+          "syllabus": {
+            "objectifs": "À l’issue de ce cours, l’étudiant sera capable de :\n- Comprendre les processus de formation et de dégradation des sols, notamment l’érosion.\n- Identifier les causes et les impacts de l’érosion des sols en milieu tropical et agricole.\n- Connaître et appliquer les techniques de conservation des sols adaptées aux différentes conditions pédoclimatiques.\n- Planifier et mettre en œuvre des stratégies intégrées de lutte contre l’érosion (techniques mécaniques, biologiques et culturales).\n- Évaluer l’efficacité des mesures de conservation et proposer des solutions adaptées aux exploitations agricoles.\n- Sensibiliser à l’importance de la gestion durable des sols pour la sécurité alimentaire et l’environnement.",
+            "prerequis": "- Connaissances de base en pédologie et agronomie.\n- Notions élémentaires d’écologie et d’environnement.\n- Capacités d’observation et d’analyse sur le terrain.",
+            "programme": "Introduction à la pédologie et à l’érosion\n- Formation, composition et propriétés des sols\n- Types et mécanismes de l’érosion (hydrique, éolienne, etc.)\n- Facteurs influençant l’érosion en milieu agricole\nImpacts de l’érosion sur les sols et les cultures\n- Perte de fertilité et productivité agricole\n- Dégradation des infrastructures et qualité de l’eau\n- Conséquences économiques et sociales\nTechniques mécaniques de conservation des sols\n- Aménagements de terrains : terrasses, courbes de niveau, diguettes\n- Techniques antiérosives : bandes enherbées, paillage, couvertures végétales\n- Construction de barrages filtrants et canaux de drainage\nTechniques biologiques et culturales\n- Agroforesterie et rôle des arbres dans la conservation des sols\n- Couverture végétale permanente et rotation culturale\n- Utilisation de plantes fixatrices d’azote et engrais verts\nPlanification et gestion intégrée de la conservation des sols\n- Diagnostic pédologique et cartographie des risques d’érosion\n- Stratégies intégrées de lutte contre l’érosion\n- Politiques agricoles et cadres réglementaires pour la conservation des sols",
+            "bibliographie": "Ouvrages de référence :\n- Lal, R. (1990). Soil Erosion and Conservation. Longman Scientific & Technical.\n- Pimentel, D. (2006). Soil Erosion: Environmental and Economic Impacts. CRC Press.\n- FAO (1995). Soil Conservation Techniques. FAO Soils Bulletin.\n- Montgomery, D. R. (2007). Dirt: The Erosion of Civilizations. University of California Press.\nRessources complémentaires :\n- Documentation FAO sur la gestion durable des sols.\n- Articles scientifiques sur la lutte contre l’érosion en milieu tropical.\n- Manuels locaux et guides pratiques en conservation des sols."
+          }
+        },
+        {
+          "code": "EC23-3",
+          "intitule": "Gestion intégrée des ressources en eau",
+          "cm": 10,
+          "td": 12,
+          "tp": 8,
+          "travail_personnel": 60,
+          "syllabus": {
+            "objectifs": "À l’issue de ce cours, l’étudiant sera capable de :\n- Comprendre les principes fondamentaux de la gestion intégrée des ressources en eau (GIRE).\n- Identifier les différentes sources et usages de l’eau en milieu agricole.\n- Analyser les enjeux liés à la disponibilité, la qualité et la gestion durable de l’eau.\n- Concevoir et proposer des stratégies et techniques adaptées pour une gestion rationnelle de l’eau agricole.\n- Maîtriser les outils de planification et de suivi des ressources hydriques.\n- Sensibiliser aux aspects environnementaux, économiques et sociaux liés à la gestion de l’eau.",
+            "prerequis": "- Connaissances de base en hydrologie, pédologie et agronomie.\n- Notions élémentaires de gestion environnementale et développement durable.\n- Compréhension des systèmes agricoles et des enjeux liés à la ressource en eau.",
+            "programme": "Introduction à la gestion intégrée des ressources en eau\n- Définitions et concepts clés de la GIRE\n- Cycle hydrologique et fonctionnement des bassins versants\n- Typologie des ressources en eau : eaux de surface et souterraines\nUtilisation et besoins en eau en agriculture\n- Besoins hydriques des cultures et évapotranspiration\n- Techniques d’irrigation : avantages, limites et efficacité\n- Impacts de l’agriculture sur la qualité de l’eau\nGestion durable et conservation des ressources en eau\n- Techniques d’économie d’eau et d’irrigation raisonnée\n- Gestion des eaux pluviales et recharge des nappes\n- Lutte contre la pollution et protection des sources d’eau\nOutils et méthodes de planification et suivi\n- Cartographie et modélisation des ressources en eau\n- Indicateurs et systèmes d’information pour la gestion de l’eau\n- Élaboration de plans de gestion intégrée\nGouvernance, politiques et participation locale\n- Acteurs et institutions impliqués dans la gestion de l’eau\n- Politiques nationales et internationales relatives à la GIRE\n- Approches participatives et gestion communautaire",
+            "bibliographie": "Ouvrages de référence :\n- Global Water Partnership (2000). Integrated Water Resources Management. TAC Background Papers.\n- Loucks, D. P., & van Beek, E. (2017). Water Resource Systems Planning and Management. Springer.\n- FAO (2017). Water for Sustainable Food and Agriculture.\n- Molden, D. (2007). Water for Food, Water for Life: A Comprehensive Assessment of Water Management in Agriculture. Earthscan.\nRessources complémentaires :\n- Documentation locale sur la gestion de l’eau à Madagascar.\n- Articles scientifiques et rapports techniques sur la GIRE en milieu tropical.\n- Guides pratiques sur les techniques d’irrigation et de conservation de l’eau."
+          }
+        }
+      ]
+    },
+    {
+      "code": "UE24",
+      "intitule": "OUTILS DE COMMUNICATION EN ENTREPRISE",
+      "credits": 4,
+      "lignes": [
+        {
+          "code": "EC24-1",
+          "intitule": "Psychologie des organisations",
+          "cm": 10,
+          "td": 12.5,
+          "tp": 0,
+          "travail_personnel": 60,
+          "syllabus": {
+            "objectifs": "À l’issue de ce cours, l’étudiant sera capable de :\n- Comprendre les concepts fondamentaux de la psychologie des organisations.\n- Analyser le comportement des individus et des groupes dans les organisations agricoles.\n- Identifier les facteurs influençant la motivation, la communication et la dynamique de groupe.\n- Appliquer les notions de psychologie organisationnelle pour améliorer la gestion des équipes et la productivité.\n- Sensibiliser à la gestion des conflits, au leadership et au changement organisationnel.\n- Développer des compétences en communication et en management dans un contexte agricole.",
+            "prerequis": "- Bases en psychologie générale.\n- Notions élémentaires en management et sociologie rurale.\n- Connaissance des structures organisationnelles agricoles.",
+            "programme": "Introduction à la psychologie des organisations\n- Définitions, objets et champs d’étude\n- Histoire et écoles majeures en psychologie organisationnelle\n- Spécificités des organisations agricoles\nComportement individuel au travail\n- Perception, attitudes et émotions au travail\n- Motivation : théories classiques et contemporaines\n- Stress professionnel et gestion du bien-être\nDynamique des groupes et communication\n- Fonctionnement des groupes de travail\n- Leadership et styles de management\n- Communication interpersonnelle et organisationnelle\nGestion des conflits et changement organisationnel\n- Origines et types de conflits\n- Techniques de résolution et négociation\n- Processus de changement et résistance au changement\nModule 5 : Applications pratiques en milieu agricole\n- Organisation du travail dans les exploitations agricoles\n- Gestion des ressources humaines dans les coopératives et groupements paysans\n- Cas pratiques et simulations",
+            "bibliographie": "Ouvrages de référence :\n- Robbins, S. P., & Judge, T. A. (2019). Comportement organisationnel. Pearson.\n- Greenberg, J. (2011). Behavior in Organizations. Pearson.\n- Dubois, P. (2013). Psychologie des organisations. Dunod.\n- Carton, R., & Dubois, P. (2016). Psychologie du travail et des organisations. De Boeck Supérieur.\nRessources complémentaires :\n- Articles scientifiques sur la psychologie organisationnelle en milieu rural.\n- Études de cas sur la gestion des équipes agricoles à Madagascar.\n- Documents et guides sur le leadership et la communication en agriculture."
+          }
+        },
+        {
+          "code": "EC24-2",
+          "intitule": "Stratégie d'entreprise",
+          "cm": 10,
+          "td": 12.5,
+          "tp": 0,
+          "travail_personnel": 60,
+          "syllabus": {
+            "objectifs": "À la fin de ce cours, l’étudiant sera capable de :\n- Comprendre les concepts fondamentaux de la stratégie d’entreprise dans le secteur agricole.\n- Analyser l’environnement interne et externe d’une entreprise agricole.\n- Élaborer une stratégie adaptée aux spécificités agricoles et au contexte local.\n- Identifier les facteurs clés de succès et les sources d’avantage concurrentiel.\n- Appliquer des outils d’aide à la décision stratégique.\n- Evaluer les implications stratégiques sur la gestion des ressources et le développement durable.",
+            "prerequis": "- Connaissances de base en gestion d’entreprise et économie agricole.\n- Notions élémentaires en marketing et gestion des ressources humaines.\n- Compréhension des structures organisationnelles agricoles.",
+            "programme": "Introduction à la stratégie d’entreprise\n- Définition et rôle de la stratégie\n- Processus stratégique et niveaux de stratégie\n- Spécificités des entreprises agricoles\nAnalyse stratégique externe\n- Analyse de l’environnement : PESTEL\n- Analyse sectorielle : modèle des cinq forces de Porter\n- Identification des opportunités et menaces\nAnalyse stratégique interne\n- Ressources, compétences et capacités\n- Analyse SWOT (forces, faiblesses, opportunités, menaces)\n- Avantage concurrentiel et chaîne de valeur\nFormulation de la stratégie\n- Stratégies de croissance, de diversification et de spécialisation\n- Choix stratégiques dans le contexte agricole\n- Stratégies d’innovation et développement durable\nMise en œuvre et contrôle de la stratégie\n- Organisation et management stratégique\n- Pilotage de la performance et indicateurs clés\n- Gestion du changement et adaptation stratégique",
+            "bibliographie": "Ouvrages de référence :\n- Johnson, G., Scholes, K., & Whittington, R. (2020). Exploring Corporate Strategy. Pearson.\n- Porter, M. E. (2008). Competitive Strategy. Free Press.\n- Mintzberg, H., Ahlstrand, B., & Lampel, J. (2010). Strategy Safari. Pearson.\n- Bernard, P. (2014). Stratégie d’entreprise et développement durable. Editions d’Organisation.\nRessources complémentaires :\n- Études de cas sur les entreprises agricoles à Madagascar et en Afrique.\n- Articles scientifiques sur la stratégie en agriculture et agro-industrie.\n- Rapports et guides pratiques du secteur agricole."
+          }
+        },
+        {
+          "code": "EC24-3",
+          "intitule": "Activité gymnique",
+          "cm": 0,
+          "td": 15,
+          "tp": 0,
+          "travail_personnel": 60,
+          "syllabus": {
+            "objectifs": "- Développer la condition physique générale des étudiants en lien avec les exigences du métier agricole (endurance, force, souplesse, coordination).\n- Sensibiliser aux bienfaits des activités physiques régulières pour la santé et la performance professionnelle.\n- Acquérir des techniques de base en gymnastique et activités physiques adaptées au milieu rural.\n- Améliorer la posture, prévenir les troubles musculo-squelettiques liés au travail agricole.\n- Favoriser l’esprit d’équipe, la discipline, la gestion du stress à travers des activités gymniques collectives.",
+            "prerequis": "- Être inscrit en parcours Agriculture à l’IST Antsiranana.\n- Aucune condition physique préalable obligatoire, mais une aptitude médicale à la pratique d’activité physique est recommandée.\n- Motivation à participer aux séances pratiques.",
+            "programme": "Introduction à l’activité gymnique\n- Concepts fondamentaux de la gymnastique et de l’activité physique adaptée\n- Rôle de l’activité physique dans la santé et le travail agricole\n- Notions d’échauffement, d’étirement et de récupération\nTechniques de base en gymnastique\n- Exercices de souplesse, de mobilité articulaire\n- Exercices de renforcement musculaire (exercices au poids du corps)\n- Postures correctes et prévention des blessures\nActivités gymniques appliquées à l’agriculture\nExercices spécifiques pour le dos, les membres supérieurs et inférieurs\n- Gestes professionnels et leur optimisation par la préparation physique\n- Exercices de coordination, d’équilibre et de proprioception\nActivités collectives et gestion du stress\n- Jeux coopératifs et activités gymniques en groupe\n- Techniques de respiration et relaxation\n- Approche de la gestion du stress par l’activité physique",
+            "bibliographie": "- Besson, D., & Lambert, J. (2018). Physiologie de l’exercice et de la gymnastique. Paris : Éditions Masson.\n- Guérin, G. (2016). Gymnastique et santé au travail. Lyon : Presses Universitaires.\n- Müller, A. (2017). Activités physiques et travail agricole : prévention et bien-être. Bruxelles : Éditions de l’Université.\n- Organisation Mondiale de la Santé (OMS). (2010). Recommandations mondiales sur l’activité physique pour la santé.\n- Articles scientifiques et guides pratiques accessibles sur la plateforme IST Antsiranana."
+          }
+        }
+      ]
+    }
+  ]
+}

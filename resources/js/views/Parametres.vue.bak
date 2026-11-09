@@ -1,0 +1,56 @@
+<script setup>
+import { ref, reactive, onMounted } from 'vue';
+import { http, auth, unwrap, liste, erreur, notifier, estAdmin, nomUser, confirmer } from '../api';
+// Noms de champs envoyés à l'API : à ajuster ici si ton backend en utilise d'autres.
+const NK = 'nom' in (auth.user ?? {}) ? 'nom' : 'name';
+const ROLES = { admin: 'Administrateur', enseignant: 'Enseignant' };
+const profil = reactive({ [NK]: nomUser(), email: auth.user?.email ?? '' });
+const mdp = reactive({ current_password: '', password: '', password_confirmation: '' });
+const users = ref([]); const nouveau = reactive({ [NK]: '', email: '', role: 'enseignant', password: '' }); const temp = ref('');
+
+async function agir(f, ok) { try { await f(); notifier(ok); } catch (e) { notifier(erreur(e), 'error'); } }
+const majProfil = () => agir(async () => { auth.user = { ...auth.user, ...unwrap(await http.put('/profil', profil)) }; }, 'Profil mis à jour.');
+const majMdp = () => agir(async () => { await http.put('/profil/mot-de-passe', mdp); Object.keys(mdp).forEach((k) => (mdp[k] = '')); }, 'Mot de passe modifié.');
+const charger = () => agir(async () => { users.value = liste(unwrap(await http.get('/admin/utilisateurs'))); }, 'Liste actualisée.').then(() => {});
+const creer = () => agir(async () => {
+    const corps = { ...nouveau }; if (!corps.password) delete corps.password;
+    const r = unwrap(await http.post('/admin/utilisateurs', corps));
+    temp.value = Object.entries(r ?? {}).find(([k]) => /mot_de_passe|password/.test(k) && typeof r[k] === 'string')?.[1] ?? '';
+    Object.assign(nouveau, { [NK]: '', email: '', password: '' });
+    users.value = liste(unwrap(await http.get('/admin/utilisateurs')));
+}, 'Compte créé.');
+async function basculer(u) {
+    const actif = u.actif ?? u.est_actif;
+    if (!(await confirmer(`${actif ? 'Désactiver' : 'Réactiver'} le compte de ${u[NK] ?? u.email} ?`))) return;
+    agir(async () => { await http.put(`/admin/utilisateurs/${u.id}`, { [NK]: u[NK], email: u.email, role: u.role, actif: !actif }); users.value = liste(unwrap(await http.get('/admin/utilisateurs'))); }, 'Compte mis à jour.');
+}
+onMounted(() => { if (estAdmin()) users.value = [], http.get('/admin/utilisateurs').then((r) => (users.value = liste(unwrap(r)))).catch((e) => notifier(erreur(e), 'error')); });
+</script>
+<template>
+  <h1>Paramètres</h1>
+  <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+    <form class="glass" style="padding:18px" @submit.prevent="majProfil"><h2>Mon profil</h2>
+      <label for="pn">Nom</label><input id="pn" v-model="profil[NK]" required>
+      <label for="pe">Adresse e-mail</label><input id="pe" v-model="profil.email" type="email" required>
+      <p><button class="primary">Enregistrer</button></p></form>
+    <form class="glass" style="padding:18px" @submit.prevent="majMdp"><h2>Mot de passe</h2>
+      <label for="m1">Mot de passe actuel</label><input id="m1" v-model="mdp.current_password" type="password" autocomplete="current-password" required>
+      <label for="m2">Nouveau mot de passe</label><input id="m2" v-model="mdp.password" type="password" autocomplete="new-password" required>
+      <label for="m3">Confirmation</label><input id="m3" v-model="mdp.password_confirmation" type="password" autocomplete="new-password" required>
+      <p><button class="primary">Changer le mot de passe</button></p></form>
+  </div>
+  <section v-if="estAdmin()" style="margin-top:28px"><h2>Gestion des utilisateurs</h2>
+    <form class="glass row" style="padding:16px" @submit.prevent="creer">
+      <div class="grow"><label for="un">Nom</label><input id="un" v-model="nouveau[NK]" required></div>
+      <div class="grow"><label for="ue">E-mail</label><input id="ue" v-model="nouveau.email" type="email" required></div>
+      <div><label for="ur">Rôle</label><select id="ur" v-model="nouveau.role"><option v-for="(l, k) in ROLES" :key="k" :value="k">{{ l }}</option></select></div>
+      <div class="grow"><label for="up">Mot de passe (facultatif)</label><input id="up" v-model="nouveau.password" type="password" autocomplete="new-password" placeholder="Vide = mot de passe temporaire"></div>
+      <button class="primary" style="align-self:end">Créer le compte</button></form>
+    <p v-if="temp" class="glass" style="padding:12px">Mot de passe temporaire (affiché une seule fois) : <strong>{{ temp }}</strong></p>
+    <div class="tw"><table><thead><tr><th>Nom</th><th>E-mail</th><th>Rôle</th><th>Statut</th><th></th></tr></thead><tbody>
+      <tr v-for="u in users" :key="u.id"><td>{{ u[NK] }}</td><td>{{ u.email }}</td><td>{{ /admin/i.test(u.role) ? 'Administrateur' : 'Enseignant' }}</td>
+        <td><span class="badge" :class="{ publie: u.actif ?? u.est_actif }">{{ (u.actif ?? u.est_actif) ? 'Actif' : 'Désactivé' }}</span></td>
+        <td><button :disabled="u.id === auth.user?.id" @click="basculer(u)">{{ (u.actif ?? u.est_actif) ? 'Désactiver' : 'Réactiver' }}</button></td></tr>
+      <tr v-if="!users.length"><td colspan="5" class="mut">Aucun utilisateur à afficher.</td></tr></tbody></table></div>
+  </section>
+</template>

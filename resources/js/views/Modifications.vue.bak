@@ -1,0 +1,77 @@
+<script setup>
+import { ref, computed, onMounted } from 'vue';
+import { http, unwrap, liste, erreur, notifier, confirmer, estAdmin, lib, idDe, etiq, statutDe, STATUT } from '../api';
+const onglet = ref('maquettes'); const admin = estAdmin();
+const maquettes = ref([]); const syllabus = ref([]); const q = ref(''); const filtre = ref('');
+const edition = ref(null); const champs = ref({}); const busy = ref(false);
+
+const garde = (f) => async (...a) => { busy.value = true; try { await f(...a); } catch (e) { notifier(erreur(e), 'error'); } finally { busy.value = false; } };
+const chargerMaquettes = garde(async () => { maquettes.value = liste(unwrap(await http.get('/maquettes'))); });
+const chargerSyllabus = garde(async () => { syllabus.value = liste(unwrap(await http.get(admin ? '/admin/syllabus' : '/mes-syllabus'))); });
+onMounted(() => { chargerMaquettes(); chargerSyllabus(); });
+
+const titre = (m) => m.titre ?? (lib(m) || `${lib(m.niveau)} ${lib(m.parcours)} ${m.annee?.libelle ?? m.annee ?? ''}`.trim());
+const vues = computed(() => maquettes.value.filter((m) => (!filtre.value || statutDe(m) === filtre.value) && titre(m).toLowerCase().includes(q.value.toLowerCase())));
+
+async function action(m, verbe, chemin, texte, corps = {}) {
+    if (!(await confirmer(texte))) return;
+    await garde(async () => { await http.post(`/admin/maquettes/${idDe(m)}/${chemin}`, corps); notifier(verbe); await chargerMaquettes(); })();
+}
+const publier = (m) => action(m, 'Maquette publiée.', 'publier', `Publier « ${titre(m)} » ? Elle deviendra visible du public.`, { confirmation: true, confirmer: true });
+const archiver = (m) => action(m, 'Maquette archivée.', 'archiver', `Archiver « ${titre(m)} » ? Elle ne sera plus visible du public.`);
+async function supprimer(m) {
+    if (!(await confirmer(`Supprimer définitivement le brouillon « ${titre(m)} » et son contenu ?`))) return;
+    await garde(async () => { await http.delete(`/admin/maquettes/${idDe(m)}`); notifier('Brouillon supprimé.'); await chargerMaquettes(); })();
+}
+
+const modifiable = (o) => Object.entries(o).filter(([k, v]) => typeof v === 'string' && !/^(id|ulid|statut|status|code)$/.test(k) && !/(_id|_at)$/.test(k));
+const ouvrir = garde(async (s) => { const d = unwrap(await http.get(`/syllabus/${idDe(s)}`)); edition.value = d; champs.value = Object.fromEntries(modifiable(d)); });
+const enregistrer = garde(async () => {
+    const corps = Object.fromEntries(Object.entries(champs.value).filter(([k, v]) => v !== edition.value[k]));
+    if (!Object.keys(corps).length) return notifier('Aucune modification à enregistrer.');
+    await http.put(`/syllabus/${idDe(edition.value)}`, corps); notifier('Syllabus enregistré.'); edition.value = null; await chargerSyllabus();
+});
+async function statut(s, valeur, texte) {
+    if (!(await confirmer(texte))) return;
+    await garde(async () => { await http.put(`/syllabus/${idDe(s)}`, { statut: valeur }); notifier('Statut mis à jour.'); await chargerSyllabus(); })();
+}
+async function supprimerSyllabus(s) {
+    if (!(await confirmer(`Supprimer le brouillon « ${lib(s)} » ?`))) return;
+    await garde(async () => { await http.delete(`/admin/syllabus/${idDe(s)}`); notifier('Brouillon supprimé.'); await chargerSyllabus(); })();
+}
+</script>
+<template>
+  <h1>Modifications</h1>
+  <div class="tabs"><button :class="{ on: onglet === 'maquettes' }" @click="onglet = 'maquettes'">Maquettes pédagogiques</button>
+    <button :class="{ on: onglet === 'syllabus' }" @click="onglet = 'syllabus'; edition = null">Syllabus</button></div>
+
+  <section v-if="onglet === 'maquettes'">
+    <div class="row"><input v-model="q" class="grow" placeholder="Rechercher une maquette" aria-label="Rechercher">
+      <select v-model="filtre" aria-label="Filtrer par statut" style="width:auto"><option value="">Tous les statuts</option><option v-for="(l, k) in STATUT" :key="k" :value="k">{{ l }}</option></select></div>
+    <p v-if="!admin" class="mut">Les maquettes sont en lecture seule pour votre rôle.</p>
+    <div class="tw"><table><thead><tr><th>Maquette</th><th>Statut</th><th v-if="admin">Actions</th></tr></thead><tbody>
+      <tr v-for="m in vues" :key="idDe(m)"><td>{{ titre(m) }}</td><td><span class="badge" :class="statutDe(m)">{{ STATUT[statutDe(m)] }}</span></td>
+        <td v-if="admin" class="row"><button v-if="statutDe(m) === 'brouillon'" class="primary" :disabled="busy" @click="publier(m)">Publier</button>
+          <button v-if="statutDe(m) === 'publie'" :disabled="busy" @click="archiver(m)">Archiver</button>
+          <button v-if="statutDe(m) === 'brouillon'" class="danger" :disabled="busy" @click="supprimer(m)">Supprimer</button></td></tr>
+      <tr v-if="!vues.length"><td colspan="3" class="mut">Aucune maquette ne correspond.</td></tr></tbody></table></div>
+  </section>
+
+  <section v-else-if="!edition">
+    <p v-if="!admin" class="mut">Vous ne pouvez modifier que les syllabus qui vous ont été attribués.</p>
+    <div class="tw"><table><thead><tr><th>Syllabus</th><th>Statut</th><th>Actions</th></tr></thead><tbody>
+      <tr v-for="s in syllabus" :key="idDe(s)"><td>{{ lib(s) || lib(s.ec) }}</td><td><span class="badge" :class="statutDe(s)">{{ STATUT[statutDe(s)] }}</span></td>
+        <td class="row"><button :disabled="busy || (statutDe(s) === 'archive')" @click="ouvrir(s)">Modifier</button>
+          <template v-if="admin"><button v-if="statutDe(s) === 'brouillon'" class="primary" @click="statut(s, 'publie', 'Publier ce syllabus ?')">Publier</button>
+            <button v-if="statutDe(s) === 'publie'" @click="statut(s, 'archive', 'Archiver ce syllabus ?')">Archiver</button>
+            <button v-if="statutDe(s) === 'brouillon'" class="danger" @click="supprimerSyllabus(s)">Supprimer</button></template></td></tr>
+      <tr v-if="!syllabus.length"><td colspan="3" class="mut">Aucun syllabus accessible pour le moment.</td></tr></tbody></table></div>
+  </section>
+
+  <form v-else @submit.prevent="enregistrer">
+    <div class="row"><button type="button" @click="edition = null">← Retour</button><h2 class="grow">{{ lib(edition) }}</h2></div>
+    <template v-for="(v, k) in champs" :key="k"><label :for="'c' + k">{{ etiq(String(k)) }}</label>
+      <textarea v-if="v.length > 60" :id="'c' + k" v-model="champs[k]" rows="5" /><input v-else :id="'c' + k" v-model="champs[k]"></template>
+    <p><button class="primary" :disabled="busy">Enregistrer les modifications</button></p>
+  </form>
+</template>
